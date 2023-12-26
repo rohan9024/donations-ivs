@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Smart India Hackathon Qualifiers",
+    "desc": "Winner of the Internal hackathon at Vidyalankar Polytechnic",
+    "project": "News Fetcher",
+    "keyFeature": ["Safe routing", "URL parameters", "URL Encoding"],
+    "images": ["/SIH-1.jpg", "/SIH-2.jpg"],
+    "banner": "/SIH-1.jpg",
+    "route": "SIH"
+  },
+
+  {
+    "name": "DJ Sanghvi Hackniche",
+    "desc": "Shortlisted for the offline round amongst 1200 teams all over India",
+    "project": "News Fetcher using News API and AWS Lambda Functions",
+    "keyFeature": [
+      "Lambda functions",
+      "S3 Storage",
+      "Minimal UI using Verified Relaxed Fonts"
+    ],
+    "images": ["/hackniche-1.jpeg", "/hackniche-2.jpeg"],
+    "banner": "/hackniche-1.jpeg",
+    "route": "hackniche"
+  },
+  {
+    "name": "ERR-404 Hackathon at M.H. Saboo Siddik",
+    "desc": "Top 5 against 500 teams all over India ",
+    "project": "Intellihire",
+    "keyFeature": [
+      "Data fetcher AI Model from Resume",
+      "Shortlisting 100-500 candidates based on Job Fit Score at one click"
+    ],
+    "images": ["/err-1.jpeg", "/err-2.jpeg", "/err-3.jpeg", "/err-4.jpeg"],
+    "banner": "/err-3.jpeg",
+    "route": "err404"
+  },
+  {
+    "name": "DJ Sanghvi Codeshastra",
+    "desc": "Shortlisted for the offline round amongst 300-400 teams all over India",
+    "project": "Ettarra Cafe App",
+    "keyFeature": ["Blockchain based Smart Contracts", "Coins based on orders"],
+    "images": [
+      "/codeshastra-1.jpg",
+      "/codeshastra-2.jpg",
+      "/codeshastra-3.jpg",
+      "/codeshastra-4.jpg"
+    ],
+    "banner": "/codeshastra-2.jpg",
+    "route": "codeshastra"
+  },
+  {
+    "name": "Winner at Open Source Competition ",
+    "desc": "Highest number of contributions amongst 600 students all over India",
+    "project": "null",
+    "keyFeature": ["Blockchain based Smart Contracts", "Coins based on orders"],
+    "images": [
+      "/codeshastra-1.jpg",
+      "/codeshastra-2.jpg",
+      "/codeshastra-3.jpg",
+      "/codeshastra-4.jpg"
+    ],
+    "banner": "/clueless.jpeg",
+    "route": "clueless"
+  },
+  {
+    "name": "Hacktoberfest 2022",
+    "desc": "Received swags for open source contribution",
+    "project": null,
+    "keyFeature": null,
+    "images": null,
+    "banner": "/hacktoberfest2022.jpg",
+    "route": null
+  },
+  {
+    "name": "Hacktoberfest 2021",
+    "desc": "Received swags for open source contribution",
+    "project": null,
+    "keyFeature": null,
+    "images": null,
+    "banner": "/hacktoberfest2021.jpg",
+    "route": null
+  },
+  {
+    "name": "Open Source Mentor for IITians ",
+    "desc": "Helped Tier 1 and Tier 2 college students get started with open source",
+    "project": null,
+    "keyFeature": null,
+    "images": null,
+    "banner": "/codepeak-1.jpeg",
+    "route": "codepeak"
+  }
+]

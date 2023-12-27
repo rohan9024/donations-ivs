@@ -33,7 +33,7 @@ function page() {
                 width={3000}
                 height={3000}
                 alt="sideimage"
-                className=' object-cover h-[440px]'
+                className=' object-contain h-[440px]'
             />
         </div>
         <div className={`${raleway.className} lg:w-1/2 lg:space-y-12 space-y-3 `}>

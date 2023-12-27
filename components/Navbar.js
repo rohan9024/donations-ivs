@@ -40,7 +40,7 @@ function Navbar() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.7 }}
-                    className=' flex justify-between items-center   mx-9 py-6 lg:mx-0 lg:p-5 lg:px-20'>
+                    className=' flex justify-between items-center mx-5  py-6 lg:mx-0 lg:p-5 lg:px-20'>
                     {/* Hidden on mobile screens */}
                     <div className={`${raleway.className}  hidden lg:flex transition ease-in  duration-300 cursor-pointer`} >
                         <Image

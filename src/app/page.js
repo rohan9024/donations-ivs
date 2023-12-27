@@ -49,13 +49,13 @@ export default function Home() {
     return (
         <div className='w-screen '>
 
-            <section className='lg:w-screen  '>
+            <section className='lg:w-screen  bg-[#192F5A] text-white'>
 
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.7 }}
-                    className=' flex justify-between items-center  mt-10 mx-9 lg:mx-0 lg:ml-20 lg:mr-20'>
+                    className=' flex justify-between items-center   mx-9 lg:mx-0 lg:p-5 lg:px-20'>
                     {/* Hidden on mobile screens */}
                     <div className={`${raleway.className}  hidden lg:flex cursor-pointer transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-105 duration-300`} >
                         <Image
@@ -107,8 +107,8 @@ export default function Home() {
                             )
                     }
                     <div className={`${manrope.className} hidden lg:flex lg:justify-evenly lg:items-center  lg:w-92 space-x-12`}>
-                        <Link href="/donate-now" className=' transition ease-in  hover:font-bold hover:scale-105 hover:text-black  text-gray-700  p-2  cursor-pointer'>Donate Now</Link>
-                        <Link href="/contact-us" className=' transition ease-in  hover:font-bold hover:scale-105 hover:text-black  text-gray-700  p-2  cursor-pointer'>Contact Us</Link>
+                        <Link href="/donate-now" className=' transition ease-in  hover:font-bold hover:scale-105     p-2  cursor-pointer'>Donate Now</Link>
+                        <Link href="/contact-us" className=' transition ease-in  hover:font-bold hover:scale-105     p-2  cursor-pointer'>Contact Us</Link>
                     </div>
 
       

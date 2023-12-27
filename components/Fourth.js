@@ -16,9 +16,9 @@ function Fourth() {
             <div className='lg:hidden flex flex-col mx-10 mt-20 my-44'>
 
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.7 }}
+                      initial={{ opacity: 0, y: -120 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ ease: "easeOut", duration: 1 }}
                     className='flex flex-col items-center space-y-5 md:space-y-10 md:items-start'>
 
                     <div className=''>
@@ -40,9 +40,9 @@ function Fourth() {
             {/* Hidden on mobile screens */}
             <div className='hidden lg:flex flex-col mt-32 mx-32 my-44'>
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.7 }}
+      initial={{ opacity: 0, y: -120 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ ease: "easeOut", duration: 1 }}
                     className='flex items-center lg:space-x-28 space-x-12 space-y-12 '>
                     <div className={`${raleway.className} w-1/2  space-y-12`}>
                         <h1 className=' text-6xl font-bold'>Your Support Matters<br /></h1>

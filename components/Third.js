@@ -16,9 +16,9 @@ function Third() {
             <div className='lg:hidden flex flex-col mx-10 mt-20 '>
 
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.7 }}
+                   initial={{ opacity: 0, y: -120 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   transition={{ ease: "easeOut", duration: 1 }}
                     className='flex flex-col items-center space-y-5 md:space-y-10 md:items-start'>
 
                     <div className=''>
@@ -40,9 +40,9 @@ function Third() {
             {/* Hidden on mobile screens */}
             <div className='hidden lg:flex flex-col mt-44 mx-32'>
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.7 }}
+             initial={{ opacity: 0, y: -120 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             transition={{ ease: "easeOut", duration: 1 }}
                     className='flex items-center space-x-12 lg:space-x-28 space-y-12 '>
                     <div className='w-1/2'>
                         <Image

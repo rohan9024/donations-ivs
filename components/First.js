@@ -12,9 +12,9 @@ function First() {
     return (
         <>
         <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
+      initial={{ opacity: 0, y: -120 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ ease: "easeOut", duration: 1 }}
         className='lg:flex-row flex-col flex justify-center lg:justify-normal items-center space-y-4 md:space-y-12 lg:space-x-32 lg:space-y-12  lg:mx-28 mx-10 mt-10 lg:mt-20'>
         <div className='hidden lg:flex lg:w-1/2'>
             <Image

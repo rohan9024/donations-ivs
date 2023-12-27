@@ -67,7 +67,7 @@ function Navbar() {
                             (
                                 <motion.div
                                     whileTap={{ scale: 0.97 }}
-                                    className='lg:hidden object-contain rounded-full p-4 hover:cursor-pointer bg-white' onClick={() => setMenu(false)}>
+                                    className='lg:hidden object-contain rounded-full p-3 hover:cursor-pointer bg-white' onClick={() => setMenu(false)}>
                                     <Image
                                         src="/close.png"
                                         width={20}
@@ -80,7 +80,7 @@ function Navbar() {
                             :
                             (
                                 <motion.div
-                                    className='lg:hidden object-contain rounded-full p-4 hover:cursor-pointer bg-white' onClick={() => setMenu(true)}>
+                                    className='lg:hidden object-contain rounded-full p-3 hover:cursor-pointer bg-white' onClick={() => setMenu(true)}>
                                     <Image
                                         src="/menu.png"
                                         width={20}

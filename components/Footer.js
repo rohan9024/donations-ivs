@@ -26,13 +26,13 @@ function Footer() {
                     />
                 </div>
             </div>
-            <div className='w-4/5 mx-auto my-10 text-center flex flex-col lg:flex-row justify-center items-center lg:space-x-32 space-y-10'>
-                <div className='flex flex-col justify-start items-center'>
+            <div className='w-4/5 mx-auto my-10 text-center flex flex-col lg:flex-row justify-center items-center lg:space-x-32 lg:space-y-0 space-y-10'>
+                <div className='flex flex-col justify-center items-center'>
 
                     <h1 className={`${manrope.className} my-4 font-bold text-2xl hover:cursor-pointer`}>Contact Information</h1>
-                    <h1 className={`${manrope.className} my-4 hover:cursor-pointer`}> 2003, Agarwal Trinity Tower <br /> Malad West, Mumbai, <br /> Maharashtra - 400064, India</h1>
+                    <h1 className={`${manrope.className} my-4 hover:cursor-pointer`}> 65-B/2 Gautam Nagar <br /> New Delhi 110049</h1>
                 </div>
-                <div className='flex flex-col justify-start items-center '>
+                <div className='flex flex-col justify-center items-center '>
 
                     <h1 className={`${manrope.className} hidden md:flex my-4 font-bold text-2xl hover:cursor-pointer`}>Social Media Links</h1>
                     <section className='flex space-x-10 items-center justify-center'>

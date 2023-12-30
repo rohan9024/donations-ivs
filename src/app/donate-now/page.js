@@ -47,7 +47,7 @@ function page() {
 
         <div className='flex flex-col justify-center items-center mt-20 space-y-5 lg:w-1/2'>
           <h1 className={`${raleway.className} text-4xl font-bold mb-10`}>Donate Now</h1>
-          <motion.div className='flex justify-center items-center cursor-pointer border border-gray-300 rounded-2xl'>
+          <motion.div className='flex flex-col lg:flex-row justify-center items-center cursor-pointer border border-gray-300 rounded-2xl'>
             <motion.div
               className={`${paymentOption === 'one time'
                 ? 'bg-blue-600 border-blue-600 text-white'
@@ -73,36 +73,36 @@ function page() {
           </motion.div>
 
           {/* Recurring */}
-          <div className='flex justify-center items-center space-x-16'>
+          <div className='flex flex-col md:flex-row justify-center items-center md:space-x-16 space-y-5'>
 
-          <div className='flex flex-col justify-start space-y-5'>
-            <h1 className={`${manrope.className} text-xl`}>How often would you like to donate?</h1>
-            <select
-              value={paymentDuration}
-              onChange={handlePaymentDurationDropdown}
-              className="block w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
-            >
-              {paymentDurationList.map((paymentDuration, index) => (
-                <option key={index} value={paymentDuration}>
-                  {paymentDuration}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className='flex flex-col justify-start space-y-5'>
-            <h1 className={`${manrope.className} text-xl`}>For how long would you like to donate?</h1>
-            <select
-              value={paymentDuration}
-              onChange={handlePaymentDurationDropdown}
-              className="block w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
-            >
-              {paymentDurationList.map((paymentDuration, index) => (
-                <option key={index} value={paymentDuration}>
-                  {paymentDuration}
-                </option>
-              ))}
-            </select>
-          </div>
+            <div className='flex flex-col justify-start space-y-5'>
+              <h1 className={`${manrope.className} text-xl`}>How often would you like to donate?</h1>
+              <select
+                value={paymentDuration}
+                onChange={handlePaymentDurationDropdown}
+                className="block w-72 md:w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
+              >
+                {paymentDurationList.map((paymentDuration, index) => (
+                  <option key={index} value={paymentDuration}>
+                    {paymentDuration}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className='flex flex-col justify-start space-y-5'>
+              <h1 className={`${manrope.className} text-xl`}>For how long would you like to donate?</h1>
+              <select
+                value={paymentDuration}
+                onChange={handlePaymentDurationDropdown}
+                className="block w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
+              >
+                {paymentDurationList.map((paymentDuration, index) => (
+                  <option key={index} value={paymentDuration}>
+                    {paymentDuration}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
 

@@ -58,7 +58,7 @@ function page() {
                         <input onChange={(e) => setDesc(e.target.value)} required type="text" placeholder="Description" className={`${manrope.className}  mt-10 placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800  w-72 md:w-96 `} />
 
 
-                        <div disabled={!email || !desc} type="submit" onClick={submit} class="cursor-pointer my-10 lg:my-0 mt-10 px-28 md:px-36 py-4 bg-black text-white rounded-lg">
+                        <div disabled={!email || !desc} type="submit" onClick={submit} class="cursor-pointer my-10 px-28 md:px-36 py-4 bg-black text-white rounded-lg">
                             <span class="relative text-center">Submit</span>
                         </div>
 

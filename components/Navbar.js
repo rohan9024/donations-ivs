@@ -6,6 +6,7 @@ import { Raleway } from 'next/font/google';
 import { motion } from "framer-motion"
 import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 
 const raleway = Raleway({
@@ -31,6 +32,7 @@ const itemVariants = {
 };
 function Navbar() {
     const [menu, setMenu] = useState(false)
+    const router = useRouter()
 
     return (
         <>
@@ -42,7 +44,7 @@ function Navbar() {
                     transition={{ duration: 0.7 }}
                     className=' flex justify-between items-center mx-5  py-6 lg:mx-0 lg:p-5 lg:px-20'>
                     {/* Hidden on mobile screens */}
-                    <div className={`${raleway.className}  hidden lg:flex transition ease-in  duration-300 cursor-pointer`} >
+                    <div onClick={()=> router.push("/") } className={`${raleway.className}  hidden lg:flex transition ease-in  duration-300 cursor-pointer`} >
                         <Image
                             src="/logo-white.png"
                             width={3000}
@@ -53,7 +55,7 @@ function Navbar() {
                     </div>
                     {/* Hidden on large screens  */}
 
-                    <div className={`${raleway.className} lg:hidden flex justify-center space-x-4 items-center  cursor-pointer `} >
+                    <div onClick={()=> router.push("/") } className={`${raleway.className} lg:hidden flex justify-center space-x-4 items-center  cursor-pointer `} >
                         <Image
                             src="/logo-white.png"
                             width={3000}

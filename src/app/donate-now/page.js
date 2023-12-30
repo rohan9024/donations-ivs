@@ -22,6 +22,7 @@ function page() {
   const [email, setEmail] = useState("")
   const [paymentOption, setPaymentOption] = useState("recurring")
   const [paymentDuration, setPaymentDuration] = useState("")
+  const [monthlyAmount, setMonthlyAmount] = useState()
   const paymentDurationList = [
     "Monthly",
     "Yearly"
@@ -31,8 +32,21 @@ function page() {
     setPaymentDuration(event.target.value);
   };
 
-  const submit = () => {
 
+  const isInputValid = (input) => {
+    // Check if the input contains only numbers
+    return /^[0-9]+$/.test(input);
+  };
+
+
+  const submit = () => {
+    if (isInputValid(monthlyAmount)) {
+      // Perform your submission logic here
+      alert('Submit successful');
+    } else {
+      // Display an error message or take appropriate action
+      alert('Invalid input. Please enter only numbers.');
+    }
   }
 
 
@@ -73,10 +87,10 @@ function page() {
           </motion.div>
 
           {/* Recurring */}
-          <div className='flex flex-col md:flex-row justify-center items-center md:space-x-16 space-y-5 '>
+          <div className='flex flex-col md:flex-row justify-center items-center md:space-x-16 space-y-5 md:space-y-0 mx-10 md:mx-0'>
 
             <div className='flex flex-col justify-start space-y-5'>
-              <h1 className={`${manrope.className} text-xl `}>How often would you like to donate?</h1>
+              <h1 className={`${manrope.className} md:text-xl text-md`}>How often would you like to donate?</h1>
               <select
                 value={paymentDuration}
                 onChange={handlePaymentDurationDropdown}
@@ -90,7 +104,7 @@ function page() {
               </select>
             </div>
             <div className='flex flex-col justify-start space-y-5'>
-              <h1 className={`${manrope.className} text-xl`}>For how long would you like to donate?</h1>
+              <h1 className={`${manrope.className} md:text-xl text-md`}>For how long would you like to donate?</h1>
               <select
                 value={paymentDuration}
                 onChange={handlePaymentDurationDropdown}
@@ -102,6 +116,24 @@ function page() {
                   </option>
                 ))}
               </select>
+            </div>
+            <div className='flex flex-col justify-start space-y-5'>
+              <h1 className={`${manrope.className} md:text-xl text-md`}>Enter the monthly amount</h1>
+              <div className='flex justify-center items-center'>
+                <select
+                  value={paymentDuration}
+                  onChange={handlePaymentDurationDropdown}
+                  className="block py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
+                >
+                  {paymentDurationList.map((paymentDuration, index) => (
+                    <option key={index} value={paymentDuration}>
+                      {paymentDuration}
+                    </option>
+                  ))}
+                </select>
+                <input onChange={(e) => setMonthlyAmount(e.target.value)} required type="text" placeholder="100" className={`${manrope.className} placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 `} />
+              </div>
+
             </div>
           </div>
 

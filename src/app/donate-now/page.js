@@ -267,7 +267,7 @@ function page() {
         className=' flex-col flex justify-center lg:justify-center items-center  lg:space-x-32   mx-10 lg:my-20'>
 
         <div className='flex flex-col justify-center items-center mt-20 lg:w-auto mx-5 md:mx-0 space-y-10 lg:border lg:border-gray-300 lg:p-10 lg:rounded-2xl lg:shadow-lg'>
-          <h1 className={`${raleway.className} text-4xl font-bold mb-10`}>Donate Now</h1>
+          <h1 className={`${manrope.className} text-4xl font-bold mb-10`}>Donate Now</h1>
           <motion.div className='flex flex-col lg:flex-row justify-center items-center cursor-pointer border border-gray-300 rounded-2xl'>
             <motion.div
               className={`${paymentOption === 'one time'
@@ -296,7 +296,7 @@ function page() {
           {/* Recurring */}
           <>
 
-            <div className='flex flex-col md:flex-row justify-center items-center md:space-x-16 space-y-5 md:space-y-0 mx-10 md:mx-0 '>
+            <div className='flex flex-col md:flex-row justify-center items-center md:space-x-16 space-y-5 md:space-y-0 mx-20 md:mx-0 '>
 
               <div className='flex flex-col justify-start space-y-5'>
                 <h1 className={`${manrope.className} md:text-xl text-md`}>How often would you like to donate?</h1>
@@ -374,17 +374,17 @@ function page() {
               <section className='flex lg:flex-row flex-col justify-evenly items-center lg:space-x-5 lg:space-y-0 space-y-5'>
                 <div className='flex flex-col space-y-5'>
                   <h1 className={`${manrope.className} md:text-xl text-md `}>First Name</h1>
-                  <input onChange={(e) => setFirstName(e.target.value)} required type="text" placeholder="First Name" className={`${manrope.className} placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 lg:w-96`} />
+                  <input onChange={(e) => setFirstName(e.target.value)} required type="text" placeholder="First Name" className={`${manrope.className} placeholder:text-gray-800 px-5 w-72 py-2  outline-none border border-gray-800 lg:w-96`} />
                 </div>
                 <div className='flex flex-col space-y-5'>
                   <h1 className={`${manrope.className} md:text-xl text-md `}>Last Name</h1>
-                  <input onChange={(e) => setLastName(e.target.value)} required type="text" placeholder="Last Name" className={`${manrope.className} placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 lg:w-96`} />
+                  <input onChange={(e) => setLastName(e.target.value)} required type="text" placeholder="Last Name" className={`${manrope.className} placeholder:text-gray-800 px-5 w-72 py-2  outline-none border border-gray-800 lg:w-96`} />
                 </div>
               </section>
 
               <div classname="flex flex-col justify-center items-center ">
                 <h1 className={`${manrope.className} md:text-xl text-md`}>Email</h1>
-                <input onChange={(e) => setEmail(e.target.value)} required type="text" placeholder="Email" className={`${manrope.className} placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 lg:w-96`} />
+                <input onChange={(e) => setEmail(e.target.value)} required type="text" placeholder="Email" className={`${manrope.className} placeholder:text-gray-800 px-5 w-72 py-2  outline-none border border-gray-800 lg:w-96`} />
               </div>
             </div>
 

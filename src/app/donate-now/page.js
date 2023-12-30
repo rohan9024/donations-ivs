@@ -365,7 +365,7 @@ function page() {
                         </option>
                       ))}
                     </select>
-                    <input onChange={(e) => setAmount(e.target.value)} required type="text" placeholder="100" className={`${manrope.className} placeholder:text-gray-500 px-5 py-2 w-20 lg:w-28  outline-none border border-gray-800 `} />
+                    <input onChange={(e) => setAmount(e.target.value)} required type="number" placeholder="100" className={`${manrope.className} placeholder:text-gray-500 px-5 py-2 w-20 lg:w-28  outline-none border border-gray-800 `} />
                   </div>
 
                 </div>
@@ -428,7 +428,7 @@ function page() {
                         </option>
                       ))}
                     </select>
-                    <input onChange={(e) => setAmount(e.target.value)} required type="text" placeholder="100" className={`${manrope.className} placeholder:text-gray-500 px-5 py-2 w-20 lg:w-28  outline-none border border-gray-800 `} />
+                    <input onChange={(e) => setAmount(e.target.value)} required type="number" placeholder="100" className={`${manrope.className} placeholder:text-gray-500 px-5 py-2 w-20 lg:w-28  outline-none border border-gray-800 `} />
                   </div>
 
                 </div>

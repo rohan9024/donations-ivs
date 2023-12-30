@@ -23,13 +23,173 @@ function page() {
   const [paymentOption, setPaymentOption] = useState("recurring")
   const [paymentDuration, setPaymentDuration] = useState("")
   const [monthlyAmount, setMonthlyAmount] = useState()
+  const [currency, setCurrency] = useState("")
   const paymentDurationList = [
     "Monthly",
     "Yearly"
   ]
+  const currencyList = [
+    "AED | United Arab Emirates Dirham",
+    "AFN | Afghan Afghani",
+    "ALL | Albanian Lek",
+    "AMD | Armenian Dram",
+    "ANG | Netherlands Antillean Guilder",
+    "AOA | Angolan Kwanza",
+    "ARS | Argentine Peso",
+    "AUD | Australian Dollar",
+    "AWG | Aruban Florin",
+    "AZN | Azerbaijani Manat",
+    "BAM | Bosnia And Herzegovina Convertible Mark",
+    "BBD | Barbados Dollar",
+    "BDT | Bangladeshi Taka",
+    "BGN | Bulgarian Lev",
+    "BHD | Bahraini Dinar",
+    "BIF | Burundian Franc",
+    "BMD | Bermudian Dollar (customarily Known As Bermuda Dollar)",
+    "BND | Brunei Dollar",
+    "BOB | Boliviano",
+    "BRL | Brazilian Real",
+    "BSD | Bahamian Dollar",
+    "BTN | Bhutanese Ngultrum",
+    "BWP | Botswana Pula",
+    "BZD | Belize Dollar",
+    "CAD | Canadian Dollar",
+    "CDF | Congolese Franc",
+    "CHF | Swiss Franc",
+    "CLF | Unidad De Fomento (funds Code)",
+    "CLP | Chilean Peso",
+    "CNY | Chinese Yuan",
+    "COP | Colombian Peso",
+    "CRC | Costa Rican Colon",
+    "CUC | Cuban Convertible Peso",
+    "CUP | Cuban Peso",
+    "CVE | Cape Verde Escudo",
+    "CZK | Czech Koruna",
+    "DJF | Djiboutian Franc",
+    "DKK | Danish Krone",
+    "DOP | Dominican Peso",
+    "DZD | Algerian Dinar",
+    "EGP | Egyptian Pound",
+    "ERN | Eritrean Nakfa",
+    "ETB | Ethiopian Birr",
+    "EUR | Euro",
+    "FJD | Fiji Dollar",
+    "FKP | Falkland Islands Pound",
+    "GBP | Pound Sterling",
+    "GEL | Georgian Lari",
+    "GHS | Ghanaian Cedi",
+    "GIP | Gibraltar Pound",
+    "GMD | Gambian Dalasi",
+    "GNF | Guinean Franc",
+    "GTQ | Guatemalan Quetzal",
+    "GYD | Guyanese Dollar",
+    "HKD | Hong Kong Dollar",
+    "HNL | Honduran Lempira",
+    "HRK | Croatian Kuna",
+    "HTG | Haitian Gourde",
+    "HUF | Hungarian Forint",
+    "IDR | Indonesian Rupiah",
+    "ILS | Israeli New Shekel",
+    "INR | Indian Rupee",
+    "IQD | Iraqi Dinar",
+    "IRR | Iranian Rial",
+    "ISK | Icelandic Króna",
+    "JMD | Jamaican Dollar",
+    "JOD | Jordanian Dinar",
+    "JPY | Japanese Yen",
+    "KES | Kenyan Shilling",
+    "KGS | Kyrgyzstani Som",
+    "KHR | Cambodian Riel",
+    "KMF | Comoro Franc",
+    "KPW | North Korean Won",
+    "KRW | South Korean Won",
+    "KWD | Kuwaiti Dinar",
+    "KYD | Cayman Islands Dollar",
+    "KZT | Kazakhstani Tenge",
+    "LAK | Lao Kip",
+    "LBP | Lebanese Pound",
+    "LKR | Sri Lankan Rupee",
+    "LRD | Liberian Dollar",
+    "LSL | Lesotho Loti",
+    "LYD | Libyan Dinar",
+    "MAD | Moroccan Dirham",
+    "MDL | Moldovan Leu",
+    "MGA | Malagasy Ariary",
+    "MKD | Macedonian Denar",
+    "MMK | Myanma Kyat",
+    "MNT | Mongolian Tugrik",
+    "MOP | Macanese Pataca",
+    "MUR | Mauritian Rupee",
+    "MVR | Maldivian Rufiyaa",
+    "MWK | Malawian Kwacha",
+    "MXN | Mexican Peso",
+    "MYR | Malaysian Ringgit",
+    "MZN | Mozambican Metical",
+    "NAD | Namibian Dollar",
+    "NGN | Nigerian Naira",
+    "NIO | Nicaraguan Córdoba",
+    "NOK | Norwegian Krone",
+    "NPR | Nepalese Rupee",
+    "NZD | New Zealand Dollar",
+    "OMR | Omani Rial",
+    "PAB | Panamanian Balboa",
+    "PEN | Peruvian Nuevo Sol",
+    "PGK | Papua New Guinean Kina",
+    "PHP | Philippine Peso",
+    "PKR | Pakistani Rupee",
+    "PLN | Polish Złoty",
+    "PYG | Paraguayan Guaraní",
+    "QAR | Qatari Riyal",
+    "RON | Romanian New Leu",
+    "RSD | Serbian Dinar",
+    "RWF | Rwandan Franc",
+    "SAR | Saudi Riyal",
+    "SBD | Solomon Islands Dollar",
+    "SCR | Seychelles Rupee",
+    "SDG | Sudanese Pound",
+    "SEK | Swedish Krona/kronor",
+    "SGD | Singapore Dollar",
+    "SHP | Saint Helena Pound",
+    "SLL | Sierra Leonean Leone",
+    "SOS | Somali Shilling",
+    "SRD | Surinamese Dollar",
+    "SSP | South Sudanese Pound",
+    "STD | São Tomé And Príncipe Dobra",
+    "SYP | Syrian Pound",
+    "SZL | Swazi Lilangeni",
+    "THB | Thai Baht",
+    "TJS | Tajikistani Somoni",
+    "TMT | Turkmenistani Manat",
+    "TND | Tunisian Dinar",
+    "TOP | Tongan Pa'anga",
+    "TRY | Turkish Lira",
+    "TTD | Trinidad And Tobago Dollar",
+    "TWD | New Taiwan Dollar",
+    "TZS | Tanzanian Shilling",
+    "UAH | Ukrainian Hryvnia",
+    "UGX | Ugandan Shilling",
+    "USD | United States Dollar",
+    "UYU | Uruguayan Peso",
+    "UZS | Uzbekistan Som",
+    "VND | Vietnamese Dong",
+    "VUV | Vanuatu Vatu",
+    "WST | Samoan Tala",
+    "XAF | CFA Franc BEAC",
+    "XCD | East Caribbean Dollar",
+    "XDR | Special Drawing Rights",
+    "XOF | CFA Franc BCEAO",
+    "XPF | CFP Franc",
+    "YER | Yemeni Rial",
+    "ZAR | South African Rand"
+  ];
+  
 
   const handlePaymentDurationDropdown = (event) => {
     setPaymentDuration(event.target.value);
+  };
+
+  const handleCurrency = (event) => {
+    setCurrency(event.target.value);
   };
 
 
@@ -48,6 +208,8 @@ function page() {
       alert('Invalid input. Please enter only numbers.');
     }
   }
+
+
 
 
   return (
@@ -119,19 +281,19 @@ function page() {
             </div>
             <div className='flex flex-col justify-start space-y-5'>
               <h1 className={`${manrope.className} md:text-xl text-md`}>Enter the monthly amount</h1>
-              <div className='flex justify-center items-center'>
+              <div className='flex justify-center items-center '>
                 <select
-                  value={paymentDuration}
-                  onChange={handlePaymentDurationDropdown}
-                  className="block py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
+                  value={currency}
+                  onChange={handleCurrency}
+                  className="block w-52 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
                 >
-                  {paymentDurationList.map((paymentDuration, index) => (
-                    <option key={index} value={paymentDuration}>
-                      {paymentDuration}
+                  {currencyList.map((currency, index) => (
+                    <option key={index} value={currency}>
+                      {currency}
                     </option>
                   ))}
                 </select>
-                <input onChange={(e) => setMonthlyAmount(e.target.value)} required type="text" placeholder="100" className={`${manrope.className} placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 `} />
+                <input onChange={(e) => setMonthlyAmount(e.target.value)} required type="text" placeholder="100" className={`${manrope.className} placeholder:text-gray-800 px-5 py-2 w-20  outline-none border border-gray-800 `} />
               </div>
 
             </div>

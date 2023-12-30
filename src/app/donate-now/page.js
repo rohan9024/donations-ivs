@@ -392,7 +392,7 @@ function page() {
             <div className='bg-gray-300 w-full h-[1px] my-10 shadow-md' />
 
 
-            <div className='flex flex-col lg:flex-row justify-center items-center '>
+            <div className='flex flex-col  justify-center items-center '>
               <h1 className={`${raleway.className} text-xl font-normal `}>{paymentDuration} Donation</h1>
               <h1 className={`${raleway.className} text-4xl font-bold mb-10 mt-2`}>{currency.slice(0, 3)} {amount}</h1>
 

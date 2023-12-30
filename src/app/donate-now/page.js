@@ -73,10 +73,10 @@ function page() {
           </motion.div>
 
           {/* Recurring */}
-          <div className='flex flex-col md:flex-row justify-center items-center md:space-x-16 space-y-5'>
+          <div className='flex flex-col md:flex-row justify-center items-center md:space-x-16 space-y-5 '>
 
             <div className='flex flex-col justify-start space-y-5'>
-              <h1 className={`${manrope.className} text-xl`}>How often would you like to donate?</h1>
+              <h1 className={`${manrope.className} text-xl `}>How often would you like to donate?</h1>
               <select
                 value={paymentDuration}
                 onChange={handlePaymentDurationDropdown}
@@ -94,7 +94,7 @@ function page() {
               <select
                 value={paymentDuration}
                 onChange={handlePaymentDurationDropdown}
-                className="block w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
+                className="block w-72 md:w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
               >
                 {paymentDurationList.map((paymentDuration, index) => (
                   <option key={index} value={paymentDuration}>

@@ -21,13 +21,43 @@ function page() {
   const [desc, setDesc] = useState("")
   const [email, setEmail] = useState("")
   const [paymentOption, setPaymentOption] = useState("recurring")
-  const [paymentDuration, setPaymentDuration] = useState("")
-  const [monthlyAmount, setMonthlyAmount] = useState()
-  const [currency, setCurrency] = useState("")
+  const [paymentDuration, setPaymentDuration] = useState("Monthly")
+  const [amount, setAmount] = useState(0)
+  const [monthlyDuration, setMonthlyDuration] = useState()
+  const [yearlyDuration, setYearlyDuration] = useState()
+  const [currency, setCurrency] = useState("USD | United States Dollar")
   const paymentDurationList = [
     "Monthly",
     "Yearly"
   ]
+  const yearlyDurationList = [
+    "1 Year",
+    "2 Years",
+    "3 Years",
+    "4 Years",
+    "5 Years",
+    "6 Years",
+    "7 Years",
+    "8 Years",
+    "9 Years",
+    "10 Years",
+    "11 Years"
+  ];
+
+  const monthlyDurationList = [
+    "1 Month",
+    "2 Months",
+    "3 Months",
+    "4 Months",
+    "5 Months",
+    "6 Months",
+    "7 Months",
+    "8 Months",
+    "9 Months",
+    "10 Months",
+    "11 Months"
+  ];
+
   const currencyList = [
     "AED | United Arab Emirates Dirham",
     "AFN | Afghan Afghani",
@@ -182,7 +212,7 @@ function page() {
     "YER | Yemeni Rial",
     "ZAR | South African Rand"
   ];
-  
+
 
   const handlePaymentDurationDropdown = (event) => {
     setPaymentDuration(event.target.value);
@@ -190,6 +220,12 @@ function page() {
 
   const handleCurrency = (event) => {
     setCurrency(event.target.value);
+  };
+  const handleMonthlyDonation = (event) => {
+    setMonthlyDuration(event.target.value);
+  };
+  const handleYearlyDonation = (event) => {
+    setYearlyDuration(event.target.value);
   };
 
 
@@ -199,7 +235,16 @@ function page() {
   };
 
 
-  const submit = () => {
+  const paymentWithPaytm = () => {
+    if (isInputValid(monthlyAmount)) {
+      // Perform your submission logic here
+      alert('Submit successful');
+    } else {
+      // Display an error message or take appropriate action
+      alert('Invalid input. Please enter only numbers.');
+    }
+  }
+  const paymentWithPaypal = () => {
     if (isInputValid(monthlyAmount)) {
       // Perform your submission logic here
       alert('Submit successful');
@@ -219,9 +264,9 @@ function page() {
         initial={{ opacity: 0, y: -120 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 1 }}
-        className=' flex-col flex justify-center lg:justify-center items-center  lg:space-x-32   mx-10 lg:mt-20'>
+        className=' flex-col flex justify-center lg:justify-center items-center  lg:space-x-32   mx-10 lg:my-20'>
 
-        <div className='flex flex-col justify-center items-center mt-20 space-y-5 lg:w-1/2'>
+        <div className='flex flex-col justify-center items-center mt-20 lg:w-auto mx-5 md:mx-0 space-y-10 lg:border lg:border-gray-300 lg:p-10 lg:rounded-2xl lg:shadow-lg'>
           <h1 className={`${raleway.className} text-4xl font-bold mb-10`}>Donate Now</h1>
           <motion.div className='flex flex-col lg:flex-row justify-center items-center cursor-pointer border border-gray-300 rounded-2xl'>
             <motion.div
@@ -249,43 +294,67 @@ function page() {
           </motion.div>
 
           {/* Recurring */}
-          <div className='flex flex-col md:flex-row justify-center items-center md:space-x-16 space-y-5 md:space-y-0 mx-10 md:mx-0'>
+          <>
 
-            <div className='flex flex-col justify-start space-y-5'>
-              <h1 className={`${manrope.className} md:text-xl text-md`}>How often would you like to donate?</h1>
-              <select
-                value={paymentDuration}
-                onChange={handlePaymentDurationDropdown}
-                className="block w-72 md:w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
-              >
-                {paymentDurationList.map((paymentDuration, index) => (
-                  <option key={index} value={paymentDuration}>
-                    {paymentDuration}
-                  </option>
-                ))}
-              </select>
+            <div className='flex flex-col md:flex-row justify-center items-center md:space-x-16 space-y-5 md:space-y-0 mx-10 md:mx-0 '>
+
+              <div className='flex flex-col justify-start space-y-5'>
+                <h1 className={`${manrope.className} md:text-xl text-md`}>How often would you like to donate?</h1>
+                <select
+                  value={paymentDuration}
+                  onChange={handlePaymentDurationDropdown}
+                  className="block w-72 md:w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
+                >
+                  {paymentDurationList.map((paymentDuration, index) => (
+                    <option key={index} value={paymentDuration}>
+                      {paymentDuration}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {
+                paymentDuration === "Yearly" ?
+                  (<div className='flex flex-col justify-start space-y-5'>
+                    <h1 className={`${manrope.className} md:text-xl text-md`}>For how long would you like to donate?</h1>
+                    <select
+                      value={yearlyDuration}
+                      onChange={handleYearlyDonation}
+                      className="block w-72 md:w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
+                    >
+                      {yearlyDurationList.map((yearlyDuration, index) => (
+                        <option key={index} value={yearlyDuration}>
+                          {yearlyDuration}
+                        </option>
+                      ))}
+                    </select>
+                  </div>)
+                  :
+                  (<div className='flex flex-col justify-start space-y-5'>
+                    <h1 className={`${manrope.className} md:text-xl text-md`}>For how long would you like to donate?</h1>
+                    <select
+                      value={monthlyDuration}
+                      onChange={handleMonthlyDonation}
+                      className="block w-72 md:w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
+                    >
+                      {monthlyDurationList.map((monthlyDuration, index) => (
+                        <option key={index} value={monthlyDuration}>
+                          {monthlyDuration}
+                        </option>
+                      ))}
+                    </select>
+                  </div>)
+
+              }
+
             </div>
-            <div className='flex flex-col justify-start space-y-5'>
-              <h1 className={`${manrope.className} md:text-xl text-md`}>For how long would you like to donate?</h1>
-              <select
-                value={paymentDuration}
-                onChange={handlePaymentDurationDropdown}
-                className="block w-72 md:w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
-              >
-                {paymentDurationList.map((paymentDuration, index) => (
-                  <option key={index} value={paymentDuration}>
-                    {paymentDuration}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className='flex flex-col justify-start space-y-5'>
+            <div className='flex flex-col justify-start space-y-5 '>
+
               <h1 className={`${manrope.className} md:text-xl text-md`}>Enter the monthly amount</h1>
               <div className='flex justify-center items-center '>
                 <select
                   value={currency}
                   onChange={handleCurrency}
-                  className="block w-52 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
+                  className="block w-52 lg:w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
                 >
                   {currencyList.map((currency, index) => (
                     <option key={index} value={currency}>
@@ -293,20 +362,54 @@ function page() {
                     </option>
                   ))}
                 </select>
-                <input onChange={(e) => setMonthlyAmount(e.target.value)} required type="text" placeholder="100" className={`${manrope.className} placeholder:text-gray-800 px-5 py-2 w-20  outline-none border border-gray-800 `} />
+                <input onChange={(e) => setAmount(e.target.value)} required type="text" placeholder="100" className={`${manrope.className} placeholder:text-gray-500 px-5 py-2 w-20 lg:w-28  outline-none border border-gray-800 `} />
               </div>
 
             </div>
-          </div>
+            <div className='bg-gray-300 w-full h-[1px] my-10 shadow-md' />
+
+            {/* Personal Details */}
+            <div className='flex flex-col justify-center lg:items-start items-center space-y-5 '>
+              <h1 className={`${raleway.className} text-4xl font-bold mb-10`}>Your Information</h1>
+              <section className='flex lg:flex-row flex-col justify-evenly items-center lg:space-x-5 lg:space-y-0 space-y-5'>
+                <div className='flex flex-col space-y-5'>
+                  <h1 className={`${manrope.className} md:text-xl text-md `}>First Name</h1>
+                  <input onChange={(e) => setFirstName(e.target.value)} required type="text" placeholder="First Name" className={`${manrope.className} placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 lg:w-96`} />
+                </div>
+                <div className='flex flex-col space-y-5'>
+                  <h1 className={`${manrope.className} md:text-xl text-md `}>Last Name</h1>
+                  <input onChange={(e) => setLastName(e.target.value)} required type="text" placeholder="Last Name" className={`${manrope.className} placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 lg:w-96`} />
+                </div>
+              </section>
+
+              <div classname="flex flex-col justify-center items-center ">
+                <h1 className={`${manrope.className} md:text-xl text-md`}>Email</h1>
+                <input onChange={(e) => setEmail(e.target.value)} required type="text" placeholder="Email" className={`${manrope.className} placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 lg:w-96`} />
+              </div>
+            </div>
 
 
-          <input onChange={(e) => setEmail(e.target.value)} required type="text" placeholder="Enter Email" className={`${manrope.className} placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 w-96`} />
-          <input onChange={(e) => setDesc(e.target.value)} required type="text" placeholder="Description" className={`${manrope.className}  mt-10 placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 w-96 `} />
+            <div className='bg-gray-300 w-full h-[1px] my-10 shadow-md' />
 
 
-          <div disabled={!email || !desc} type="submit" onClick={submit} class="cursor-pointer mt-10 px-36 py-4 bg-black text-white rounded-lg">
-            <span class="relative text-center">Submit</span>
-          </div>
+            <div className='flex flex-col lg:flex-row justify-center items-center '>
+              <h1 className={`${raleway.className} text-xl font-normal `}>{paymentDuration} Donation</h1>
+              <h1 className={`${raleway.className} text-4xl font-bold mb-10 mt-2`}>{currency.slice(0, 3)} {amount}</h1>
+
+              {
+                currency == "INR | Indian Rupee" ?
+                  (<div type="submit" onClick={paymentWithPaytm} class={` flex justify-center items-center space-x-10 cursor-pointer mt-5 w-auto px-10 py-4 mb-10 bg-green-700  text-white rounded-lg`}>
+                    <h1 class={`${manrope.className} text-left font-bold `}>Pay Via Paytm</h1>
+                  </div>)
+                  : (<div type="submit" onClick={paymentWithPaypal} class={` flex justify-center items-center space-x-10 cursor-pointer mt-5 w-auto px-10 py-4 mb-10 bg-green-700  text-white rounded-lg`}>
+                    <h1 class={`${manrope.className} text-left font-bold `}>Pay Via Paypal</h1>
+                  </div>)}
+            </div>
+          </>
+
+
+
+
 
         </div>
 

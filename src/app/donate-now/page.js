@@ -433,8 +433,10 @@ function page() {
 
                 <div className='flex flex-col  justify-center items-center '>
                   <h1 className={`${raleway.className} text-xl font-normal `}>{paymentDuration} Donation</h1>
-                  <h1 className={`${raleway.className} text-4xl font-bold mb-10 mt-2`}>{currency.slice(0, 3)} {amount}</h1>
-
+                  <div className='flex justify-center items-center space-x-3 align-middle my-5'>
+                    <h1 className={`${manrope.className} text-4xl font-bold`}>{currency.slice(0, 3)}</h1>
+                    <h1 className={`${manrope.className} text-4xl font-bold`}>{amount}</h1>
+                  </div>
                   {
                     currency == "INR | Indian Rupee" ?
                       (<div type="submit" onClick={paymentWithPaytm} class={` flex justify-center items-center space-x-10 cursor-pointer mt-5 w-auto px-10 py-4 mb-10 bg-green-700  text-white rounded-lg`}>
@@ -453,7 +455,7 @@ function page() {
 
                   <h1 className={`${manrope.className} md:text-xl text-md`}>Enter the amount</h1>
                   <div className='flex justify-center items-center '>
-                  <select
+                    <select
                       value={currency}
                       onChange={handleCurrency}
                       className="block w-52 lg:w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
@@ -520,9 +522,12 @@ function page() {
                 <div className='bg-gray-300 w-full h-[1px] my-10 shadow-md' />
 
 
-                <div className='flex flex-col  justify-center items-center '>
+                <div className='flex flex-col justify-center items-center my-8'>
                   <h1 className={`${raleway.className} text-xl font-normal `}>{paymentDuration} Donation</h1>
-                  <h1 className={`${raleway.className} text-4xl font-bold mb-10 mt-2`}>{currency.slice(0, 3)} {amount}</h1>
+                  <div className='flex justify-center items-center space-x-3 align-middle my-5'>
+                    <h1 className={`${manrope.className} text-4xl font-bold`}>{currency.slice(0, 3)}</h1>
+                    <h1 className={`${manrope.className} text-4xl font-bold`}>{amount}</h1>
+                  </div>
 
                   {
                     currency == "INR | Indian Rupee" ?

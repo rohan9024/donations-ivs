@@ -29,7 +29,7 @@ function page() {
   const [lastName, setLastName] = useState("")
   const [anonymous, setAnonymous] = useState(false)
   const [inName, setInName] = useState(false)
-  const [currency, setCurrency] = useState("INR | Indian Rupee")
+  const [currency, setCurrency] = useState("")
   const paymentDurationList = [
     "Monthly",
     "Yearly"
@@ -63,6 +63,11 @@ function page() {
   ];
 
   const currencyList = [
+    "INR | Indian Rupee",
+    "USD | United States Dollar",
+    "GBP | Pound Sterling",
+    "CAD | Canadian Dollar",
+    "AUD | Australian Dollar",
     "AED | United Arab Emirates Dirham",
     "AFN | Afghan Afghani",
     "ALL | Albanian Lek",
@@ -70,7 +75,6 @@ function page() {
     "ANG | Netherlands Antillean Guilder",
     "AOA | Angolan Kwanza",
     "ARS | Argentine Peso",
-    "AUD | Australian Dollar",
     "AWG | Aruban Florin",
     "AZN | Azerbaijani Manat",
     "BAM | Bosnia And Herzegovina Convertible Mark",
@@ -87,7 +91,6 @@ function page() {
     "BTN | Bhutanese Ngultrum",
     "BWP | Botswana Pula",
     "BZD | Belize Dollar",
-    "CAD | Canadian Dollar",
     "CDF | Congolese Franc",
     "CHF | Swiss Franc",
     "CLF | Unidad De Fomento (funds Code)",
@@ -109,7 +112,6 @@ function page() {
     "EUR | Euro",
     "FJD | Fiji Dollar",
     "FKP | Falkland Islands Pound",
-    "GBP | Pound Sterling",
     "GEL | Georgian Lari",
     "GHS | Ghanaian Cedi",
     "GIP | Gibraltar Pound",
@@ -124,7 +126,6 @@ function page() {
     "HUF | Hungarian Forint",
     "IDR | Indonesian Rupiah",
     "ILS | Israeli New Shekel",
-    "INR | Indian Rupee",
     "IQD | Iraqi Dinar",
     "IRR | Iranian Rial",
     "ISK | Icelandic Króna",
@@ -202,7 +203,6 @@ function page() {
     "TZS | Tanzanian Shilling",
     "UAH | Ukrainian Hryvnia",
     "UGX | Ugandan Shilling",
-    "USD | United States Dollar",
     "UYU | Uruguayan Peso",
     "UZS | Uzbekistan Som",
     "VND | Vietnamese Dong",
@@ -363,13 +363,20 @@ function page() {
                       onChange={handleCurrency}
                       className="block w-52 lg:w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
                     >
+                      <option value="" disabled hidden>Select Currency</option>
                       {currencyList.map((currency, index) => (
                         <option key={index} value={currency}>
                           {currency}
                         </option>
                       ))}
                     </select>
-                    <input onChange={(e) => setAmount(e.target.value)} required type="number" placeholder="100" className={`${manrope.className} placeholder:text-gray-500 px-5 py-2 w-20 lg:w-28  outline-none border border-gray-800 `} />
+                    <input
+                      onChange={(e) => setAmount(e.target.value)}
+                      required
+                      type="number"
+                      placeholder="100"
+                      className={`${manrope.className} placeholder:text-gray-500 px-5 py-2 w-20 lg:w-64  outline-none border border-gray-800`}
+                    />
                   </div>
 
                 </div>
@@ -378,23 +385,23 @@ function page() {
                 {/* Personal Details */}
                 <div className='flex flex-col justify-center lg:items-start items-center space-y-5 '>
                   <h1 className={`${raleway.className} text-4xl font-bold mb-10`}>Your Information</h1>
-                  
+
                   {
                     anonymous || (
 
-                      <div class="flex justify-center items-center space-x-5 cursor-pointer select-none" onClick={()=> { inName ? setInName(false) : setInName(true) }}>
-                      <input
-                        type="checkbox"
-                        checked={inName}
-                        onChange={() => { inName ? setInName(false) : setInName(true) }}
-                        className="w-5 h-5"
-                      />
-                      <h1 className={`${manrope.className} md:text-xl text-md`}>Donate in the Name of</h1>
-                    </div>
+                      <div class="flex justify-center items-center space-x-5 cursor-pointer select-none" onClick={() => { inName ? setInName(false) : setInName(true) }}>
+                        <input
+                          type="checkbox"
+                          checked={inName}
+                          onChange={() => { inName ? setInName(false) : setInName(true) }}
+                          className="w-5 h-5"
+                        />
+                        <h1 className={`${manrope.className} md:text-xl text-md`}>Donate On Behalf Of</h1>
+                      </div>
                     )
                   }
-             
-             { anonymous || (  <section className='flex lg:flex-row flex-col justify-evenly items-center lg:space-x-5 lg:space-y-0 space-y-5'>
+
+                  {anonymous || (<section className='flex lg:flex-row flex-col justify-evenly items-center lg:space-x-5 lg:space-y-0 space-y-5'>
                     <div className='flex flex-col space-y-5'>
                       <h1 className={`${manrope.className} md:text-xl text-md `}>First Name</h1>
                       <input onChange={(e) => setFirstName(e.target.value)} value={firstName} required type="text" placeholder="First Name" className={`${manrope.className} placeholder:text-gray-800 px-5 w-72 py-2  outline-none border border-gray-800 lg:w-96`} />
@@ -410,14 +417,14 @@ function page() {
                     <input onChange={(e) => setEmail(e.target.value)} required type="text" placeholder="Email" className={`${manrope.className} placeholder:text-gray-800 px-5 w-72 py-2  outline-none border border-gray-800 lg:w-96`} />
                   </div>
                 </div>
-                <div class="flex justify-center items-center space-x-5 cursor-pointer select-none" onClick={()=> { anonymous ? setAnonymous(false) : setAnonymous(true) }}>
+                <div class="flex justify-center items-center space-x-5 cursor-pointer select-none" onClick={() => { anonymous ? setAnonymous(false) : setAnonymous(true) }}>
                   <input
                     type="checkbox"
                     checked={anonymous}
                     onChange={() => { anonymous ? setAnonymous(false) : setAnonymous(true) }}
                     className="w-5 h-5"
                   />
-                  <h1 className={`${manrope.className} md:text-xl text-md`}>Would you like to stay Anonymous?</h1>
+                  <h1 className={`${manrope.className} md:text-xl text-md`}>Do You Prefer To Donate Anonymously?</h1>
                 </div>
 
 
@@ -446,18 +453,19 @@ function page() {
 
                   <h1 className={`${manrope.className} md:text-xl text-md`}>Enter the amount</h1>
                   <div className='flex justify-center items-center '>
-                    <select
+                  <select
                       value={currency}
                       onChange={handleCurrency}
                       className="block w-52 lg:w-96 py-2 px-5 leading-tight border border-gray-700 focus:outline-none cursor-pointer"
                     >
+                      <option value="" disabled hidden>Select Currency</option>
                       {currencyList.map((currency, index) => (
                         <option key={index} value={currency}>
                           {currency}
                         </option>
                       ))}
                     </select>
-                    <input onChange={(e) => setAmount(e.target.value)} required type="number" placeholder="100" className={`${manrope.className} placeholder:text-gray-500 px-5 py-2 w-20 lg:w-28  outline-none border border-gray-800 `} />
+                    <input onChange={(e) => setAmount(e.target.value)} required type="number" placeholder="100" className={`${manrope.className} placeholder:text-gray-500 px-5 py-2 w-20 lg:w-64  outline-none border border-gray-800 `} />
                   </div>
 
                 </div>
@@ -470,19 +478,19 @@ function page() {
                   {
                     anonymous || (
 
-                      <div class="flex justify-center items-center space-x-5 cursor-pointer select-none" onClick={()=> { inName ? setInName(false) : setInName(true) }}>
-                      <input
-                        type="checkbox"
-                        checked={inName}
-                        onChange={() => { inName ? setInName(false) : setInName(true) }}
-                        className="w-5 h-5"
-                      />
-                      <h1 className={`${manrope.className} md:text-xl text-md`}>Donate in the Name of</h1>
-                    </div>
+                      <div class="flex justify-center items-center space-x-5 cursor-pointer select-none" onClick={() => { inName ? setInName(false) : setInName(true) }}>
+                        <input
+                          type="checkbox"
+                          checked={inName}
+                          onChange={() => { inName ? setInName(false) : setInName(true) }}
+                          className="w-5 h-5"
+                        />
+                        <h1 className={`${manrope.className} md:text-xl text-md`}>Donate On Behalf Of</h1>
+                      </div>
                     )
                   }
-     
-               { anonymous || (  <section className='flex lg:flex-row flex-col justify-evenly items-center lg:space-x-5 lg:space-y-0 space-y-5'>
+
+                  {anonymous || (<section className='flex lg:flex-row flex-col justify-evenly items-center lg:space-x-5 lg:space-y-0 space-y-5'>
                     <div className='flex flex-col space-y-5'>
                       <h1 className={`${manrope.className} md:text-xl text-md `}>First Name</h1>
                       <input onChange={(e) => setFirstName(e.target.value)} required type="text" placeholder="First Name" className={`${manrope.className} placeholder:text-gray-800 px-5 w-72 py-2  outline-none border border-gray-800 lg:w-96`} />
@@ -498,14 +506,14 @@ function page() {
                     <input onChange={(e) => setEmail(e.target.value)} required type="text" placeholder="Email" className={`${manrope.className} placeholder:text-gray-800 px-5 w-72 py-2  outline-none border border-gray-800 lg:w-96`} />
                   </div>
                 </div>
-                <div class="flex justify-center items-center space-x-5 cursor-pointer select-none" onClick={()=> { anonymous ? setAnonymous(false) : setAnonymous(true) }}>
+                <div class="flex justify-center items-center space-x-5 cursor-pointer select-none" onClick={() => { anonymous ? setAnonymous(false) : setAnonymous(true) }}>
                   <input
                     type="checkbox"
                     checked={anonymous}
                     onChange={() => { anonymous ? setAnonymous(false) : setAnonymous(true) }}
                     className="w-5 h-5"
                   />
-                  <h1 className={`${manrope.className} md:text-xl text-md`}>Would you like to stay Anonymous?</h1>
+                  <h1 className={`${manrope.className} md:text-xl text-md`}>Do You Prefer To Donate Anonymously?</h1>
                 </div>
 
 

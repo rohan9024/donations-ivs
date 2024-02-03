@@ -30,7 +30,7 @@ function Footer() {
                 <div className='flex flex-col  h-[150px]'>
 
                     <h1 className={`${manrope.className} my-4 font-bold text-2xl xl:text-3xl hover:cursor-pointer`}>Contact Information</h1>
-                    <h1 className={`${manrope.className} my-4 text-2xl xl:text-xl hover:cursor-pointer`}> 65-B/2 Gautam Nagar <br /> New Delhi 110049</h1>
+                    <h1 className={`${manrope.className} my-4 text-xl hover:cursor-pointer`}> 65-B/2 Gautam Nagar <br /> New Delhi 110049</h1>
                 </div>
                 {/* <div className='flex flex-col lg:h-[150px]'>
 

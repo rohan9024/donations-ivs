@@ -27,8 +27,8 @@ function page() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ ease: "easeOut", duration: 1 }}
                 className=' flex-col flex justify-center lg:justify-center items-center  mx-10 my-10 lg:my-20 text-left'>
-                <h1 className={`${manrope.className} text-5xl font-bold mb-10`}>Donate Now</h1>
-                <div className='flex justify-center items-center space-x-20 my-10'>
+                <h1 className={`${manrope.className} text-5xl font-bold xl:mb-10`}>Donate Now</h1>
+                <div className='flex flex-col xl:flex-row justify-center items-center xl:space-x-20 my-10'>
                     <Image
                         src="/UPI.jpg"
                         alt="UPI QR"

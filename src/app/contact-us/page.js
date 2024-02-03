@@ -6,6 +6,7 @@ import { Raleway } from 'next/font/google';
 import Image from 'next/image';
 import { Manrope } from 'next/font/google';
 import Navbar from '../../../components/Navbar';
+import Footer from '../../../components/Footer';
 
 
 const raleway = Raleway({
@@ -59,6 +60,9 @@ function page() {
                 </div>
 
             </motion.div>
+
+            <Footer />
+
 
         </>
     )

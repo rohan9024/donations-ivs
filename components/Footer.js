@@ -32,7 +32,7 @@ function Footer() {
                     <h1 className={`${manrope.className} my-4 font-bold text-2xl hover:cursor-pointer`}>Contact Information</h1>
                     <h1 className={`${manrope.className} my-4 hover:cursor-pointer`}> 65-B/2 Gautam Nagar <br /> New Delhi 110049</h1>
                 </div>
-                <div className='flex flex-col h-[150px]'>
+                <div className='flex flex-col lg:h-[150px]'>
 
                     <h1 className={`${manrope.className} hidden md:flex my-4 font-bold text-2xl hover:cursor-pointer`}>Social Media Links</h1>
                     <section className='flex space-x-10 items-center justify-center mt-5'>
@@ -66,8 +66,8 @@ function Footer() {
                 </div>
             </div>
             <section className={`${manrope.className} md:text-xl text-sm my-2 md:my-6 text-center text-gray-300 pb-10`}>
-                        <h1>© 2024 All Rights Reserved- IVS Education Council</h1>
-                    </section>
+                <h1>© 2024 All Rights Reserved- IVS Education Council</h1>
+            </section>
         </div >
     )
 }

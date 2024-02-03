@@ -33,7 +33,7 @@ function page() {
                 initial={{ opacity: 0, y: -120 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ ease: "easeOut", duration: 1 }}
-                className='lg:flex-row flex-col flex justify-center lg:justify-center items-center  lg:space-x-32   mx-10 lg:mt-20'>
+                className='lg:flex-row flex-col flex justify-center lg:justify-center items-center  lg:space-x-32   mx-10  lg:my-20  lg:mt-20'>
                 <Image
                     src="/contactBackground.jpg"
                     width={3000}
@@ -52,11 +52,10 @@ function page() {
                         className=' object-cover h-[350px]'
                     />
                 </div>
-                <div className='flex flex-col justify-center items-center mt-20 space-y-5 lg:w-1/2 text-left'>
+                <div className='flex flex-col justify-center items-center mt-20 space-y-5 lg:w-1/2 text-left pb-20 lg:pb-0 '>
                     <h1 className={`${manrope.className} text-4xl font-bold mb-10`}>Contact Us</h1>
-                    <h1 className={`${raleway.className} text-xl  xl:text-2xl font-normal mb-10`}>Email: ivseducouncil@gmail.com</h1>
-                    <h1 className={`${raleway.className} text-xl  xl:text-2xl font-normal mb-10`}>Address: 65-B/2 Gautam Nagar <br /> New Delhi 110049</h1>
-
+                    <h1 className={`${manrope.className} text-xl  xl:text-2xl font-normal mb-10`}>Email: ivseducouncil@gmail.com</h1>
+                    <h1 className={`${manrope.className} text-xl  xl:text-2xl font-normal mb-10`}>Address: 65-B/2 Gautam Nagar <br /> New Delhi 110049</h1>
                 </div>
 
             </motion.div>

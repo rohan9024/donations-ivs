@@ -45,21 +45,16 @@ export default function Home() {
     const [displayReview2, setDisplayReview2] = useState(false);
     const [displayReview3, setDisplayReview3] = useState(false);
 
-
     return (
-        <div className='w-screen '>
+            <div className='w-screen '>
+                <Navbar />
+                <First />
+                <Second />
+                <Third />
+                <Fourth />
+                <Footer />
+            </div >
 
-         
-            <Navbar />
-            <First />
-            <Second />
-            <Third />
-            <Fourth />
-            <Footer />
-
-
-
-        </div >
     )
 }
 

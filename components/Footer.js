@@ -22,7 +22,7 @@ function Footer() {
                         width={3000}
                         height={3000}
                         alt="logo"
-                        className='w-96 object-contain rounded-full'
+                        className='h-20 w-20  object-contain rounded-full'
                     />
                 </div>
             </div>

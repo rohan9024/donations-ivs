@@ -43,25 +43,29 @@ function Navbar() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.7 }}
                     className=' flex justify-between items-center mx-5  py-6 lg:mx-0 lg:p-5 lg:px-20'>
-                    {/* Hidden on mobile screens */}
-                    <div onClick={()=> router.push("/") } className={`${raleway.className}  hidden lg:flex transition ease-in  duration-300 cursor-pointer`} >
+                    {/* large screens */}
+                    <div onClick={() => router.push("/")} className={`${raleway.className}  hidden lg:flex transition ease-in  duration-300 cursor-pointer`} >
                         <Image
-                            src="/logo-white.png"
+                            src="/logo.png"
                             width={3000}
                             height={3000}
                             alt="logo"
-                            className='w-64 object-contain rounded-full'
+                            className='h-20 w-20  object-contain rounded-full'
+                            quality={100}
+
                         />
                     </div>
-                    {/* Hidden on large screens  */}
+                    {/* mobile screens  */}
 
-                    <div onClick={()=> router.push("/") } className={`${raleway.className} lg:hidden flex justify-center space-x-4 items-center  cursor-pointer `} >
+                    <div onClick={() => router.push("/")} className={`${raleway.className} lg:hidden flex justify-center space-x-4 items-center  cursor-pointer `} >
                         <Image
-                            src="/logo-white.png"
+                            src="/logo.png"
                             width={3000}
                             height={3000}
                             alt="logo"
-                            className='w-64 object-contain rounded-full'
+                            className='h-16 w-16  object-contain rounded-full'
+                            quality={100}
+
                         />
                     </div>
                     {

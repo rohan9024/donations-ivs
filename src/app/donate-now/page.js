@@ -27,21 +27,27 @@ function page() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ ease: "easeOut", duration: 1 }}
                 className=' flex-col flex justify-center lg:justify-center items-center  mx-10 my-10 lg:my-20 text-left'>
+                <h1 className={`${manrope.className} text-5xl font-bold mb-10`}>Donate Now</h1>
+                <div className='flex justify-center items-center space-x-20 my-10'>
+                    <Image
+                        src="/UPI.jpg"
+                        alt="UPI QR"
+                        width={350}
+                        height={350}
+                        quality={100}
+                        className='h-96 w-96 object-contain'
+                    />
+                    <div className='flex flex-col'>
 
-                <h1 className={`${manrope.className} font-normal text-lg ml-5`}> <b>Company Name: </b> IVS Education Council <br />
-                    <b>Current A/C No:</b> 50200090139710 <br />
-                    <b>IFSC CODE:</b> HDFC0000482 <br />
-                    <b>Swift code:</b> HDFCINBB <br />
-                    <b>Branch: </b> ANAND LOK</h1>
-                <Image
-                    src="/UPI.jpg"
-                    alt="UPI QR"
-                    width={350}
-                    height={350}
-                    quality={100}
-                    className='h-96 w-96 object-contain'
-                />
+                        <h1 className={`${manrope.className} font-normal text-xl ml-5 space-y-5`}> <b>Company Name: </b> IVS Education Council  </h1>
+                        <h1 className={`${manrope.className} font-normal text-xl ml-5 space-y-5`}> <b>Current A/C No:</b> 50200090139710 </h1>
+                        <h1 className={`${manrope.className} font-normal text-xl ml-5 space-y-5`}> <b>IFSC CODE:</b> HDFC0000482 </h1>
+                        <h1 className={`${manrope.className} font-normal text-xl ml-5 space-y-5`}> <b>Swift code:</b> HDFCINBB </h1>
+                        <h1 className={`${manrope.className} font-normal text-xl ml-5 space-y-5`}> <b>Branch: </b> ANAND LOK </h1>
+                    </div>
 
+
+                </div>
             </motion.div>
 
         </>

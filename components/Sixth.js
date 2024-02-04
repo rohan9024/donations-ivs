@@ -15,7 +15,7 @@ const manrope = Manrope({
 
 function Sixth() {
     return (
-        <div className='flex flex-col py-20  xl:py-64 w-screen '>
+        <div className='flex flex-col py-20  xl:py-64 w-screen bg-gray-100'>
             <motion.div
                 initial={{ opacity: 0, y: -120 }}
                 whileInView={{ opacity: 1, y: 0 }}

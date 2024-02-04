@@ -18,11 +18,11 @@ function Second() {
     return (
         <>
             {/* Hidden on large screens */}
-            <div className='lg:hidden flex flex-col mx-10 mt-20 '>
+            <div className='lg:hidden flex flex-col px-10 py-20 mt-10 bg-gray-100'>
                 <motion.div
-               initial={{ opacity: 0, y: -120 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               transition={{ ease: "easeOut", duration: 1 }}
+                    initial={{ opacity: 0, y: -120 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ ease: "easeOut", duration: 1 }}
                     className='flex flex-col items-center space-y-5 md:space-y-10 md:items-start'>
                     <div className=''>
                         <Image
@@ -41,7 +41,7 @@ function Second() {
             </div>
             {/* Hidden on mobile screens */}
 
-            <div className='hidden lg:flex flex-col mx-32 mt-20'>
+            <div className='hidden lg:flex flex-col px-32 py-20 mt-10 bg-gray-100'>
 
                 <motion.div
                     initial={{ opacity: 0, y: -120 }}

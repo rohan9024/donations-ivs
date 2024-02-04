@@ -98,6 +98,8 @@ function Navbar() {
                             )
                     }
                     <div className={`${manrope.className} hidden lg:flex lg:justify-evenly lg:items-center  lg:w-92 space-x-12`}>
+                        <Link href="/" className=' transition ease-in  hover:text-gray-300  text-gray-100 duration-150 cursor-pointer p-2  '>Home</Link>
+                        <Link href="/about-us" className=' transition ease-in  hover:text-gray-300  text-gray-100 duration-150 cursor-pointer p-2  '>About Us</Link>
                         <Link href="/donate-now" className=' transition ease-in  hover:text-gray-300  text-gray-100 duration-150 cursor-pointer p-2  '>Donate Now</Link>
                         <Link href="/contact-us" className=' transition ease-in  hover:text-gray-300  text-gray-100 duration-150 cursor-pointer p-2  '>Contact Us</Link>
                     </div>
@@ -135,6 +137,8 @@ function Navbar() {
                         style={{ pointerEvents: menu ? "auto" : "none" }}
                         className='flex flex-col justify-center items-center my-10 space-y-12'
                     >
+                        <motion.a variants={itemVariants} className='text-xl' href="/" >Home</motion.a>
+                        <motion.a variants={itemVariants} className='text-xl' href="/about-us" >About Us</motion.a>
                         <motion.a variants={itemVariants} className='text-xl' href="/donate-now" >Donate Now</motion.a>
                         <motion.a variants={itemVariants} className='text-xl ' href="/contact-us" >Contact Us</motion.a>
                     </motion.ul>

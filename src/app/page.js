@@ -13,6 +13,9 @@ import Third from '../../components/Third';
 import Fourth from '../../components/Fourth';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
+import Fifth from '../../components/Fifth';
+import Sixth from '../../components/Sixth';
+import Seventh from '../../components/Seventh';
 
 
 const raleway = Raleway({
@@ -46,14 +49,17 @@ export default function Home() {
     const [displayReview3, setDisplayReview3] = useState(false);
 
     return (
-            <div className='w-screen '>
-                <Navbar />
-                <First />
-                <Second />
-                <Third />
-                <Fourth />
-                <Footer />
-            </div >
+        <div className='w-screen '>
+            <Navbar />
+            <First />
+            <Second />
+            <Third />
+            <Fourth />
+            <Fifth />
+            <Sixth />
+            <Seventh />
+            <Footer />
+        </div >
 
     )
 }

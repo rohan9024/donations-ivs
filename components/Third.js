@@ -23,7 +23,7 @@ function Third() {
 
                     <div className=''>
                         <Image
-                            src="/third.png"
+                            src="/third.jpeg"
                             width={1700}
                             height={1700}
                             alt="sideimage"
@@ -46,7 +46,7 @@ function Third() {
                     className='flex items-center space-x-12 lg:space-x-28 space-y-12 '>
                     <div className='w-1/2'>
                         <Image
-                            src="/third.png"
+                            src="/third.jpeg"
                             width={1700}
                             height={1700}
                             alt="sideimage"

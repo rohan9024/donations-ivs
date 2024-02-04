@@ -23,7 +23,7 @@ function Fourth() {
 
                     <div className=''>
                         <Image
-                            src="/fourth.png"
+                            src="/fourth.jpeg"
                             width={1700}
                             height={1700}
                             alt="sideimage"
@@ -50,7 +50,7 @@ function Fourth() {
                     </div>
                     <div className='w-1/2'>
                         <Image
-                            src="/fourth.png"
+                            src="/fourth.jpeg"
                             width={1700}
                             height={1700}
                             alt="sideimage"

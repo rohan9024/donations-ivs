@@ -26,7 +26,7 @@ function Second() {
                     className='flex flex-col items-center space-y-5 md:space-y-10 md:items-start'>
                     <div className=''>
                         <Image
-                            src="/second.png"
+                            src="/second.jpeg"
                             width={1700}
                             height={1700}
                             alt="sideimage"
@@ -55,7 +55,7 @@ function Second() {
                     </div>
                     <div className='w-1/2'>
                         <Image
-                            src="/second.png"
+                            src="/second.jpeg"
                             width={1700}
                             height={1700}
                             alt="sideimage"

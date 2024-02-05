@@ -26,7 +26,7 @@ function Seventh() {
                 <h1 className='text-lg md:text-2xl xl:text-2xl font-normal mt-12 xl:text-center text-left'>The council consists of the siblings from Sharma family. <br /> They have a combined experience of over 30 years in the education industry. </h1>
 
                 <div className='flex xl:flex-row xl:space-x-16 flex-col justify-center items-center mt-20 xl:space-y-0 space-y-5'>
-                    <div class={`${manrope.className} cursor-pointer relative flex flex-col text-gray-700 bg-white shadow-md border hover:bg-yellow-300 transition hover:ease-in hover:-translate-y-2 hover:duration-500  bg-clip-border rounded-xl w-96`}>
+                    <div class={`${manrope.className} cursor-pointer relative flex flex-col text-gray-700 bg-white shadow-md border hover:bg-gray-100 hover:shadow-xl transition hover:ease-in hover:-translate-y-2 hover:duration-500  bg-clip-border rounded-xl w-96`}>
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <p class="block  text-lg antialiased  leading-relaxed text-blue-gray-900 font-bold">
@@ -43,8 +43,9 @@ function Seventh() {
                                 </Link>
                             </div>
                         </div>
+
                     </div>
-                    <div class={`${manrope.className} cursor-pointer relative flex flex-col text-gray-700 bg-white shadow-md border hover:bg-yellow-300 transition hover:ease-in hover:-translate-y-2 hover:duration-500  bg-clip-border rounded-xl w-96`}>
+                    <div class={`${manrope.className} cursor-pointer relative flex flex-col text-gray-700 bg-white shadow-md border hover:bg-gray-100 hover:shadow-xl transition hover:ease-in hover:-translate-y-2 hover:duration-500  bg-clip-border rounded-xl w-96`}>
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <p class="block  text-lg antialiased  leading-relaxed text-blue-gray-900 font-bold">

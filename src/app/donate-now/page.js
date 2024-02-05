@@ -27,20 +27,20 @@ function page() {
                 initial={{ opacity: 0, y: -120 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ ease: "easeOut", duration: 1 }}
-                className=' flex-col flex justify-center lg:justify-center items-center  mx-10 my-10 lg:my-20 text-left'>
+                className=' flex-col flex justify-center lg:justify-center items-center  mx-10 my-10 lg:my-44 text-left'>
                 {/* <h1 className={`${manrope.className} text-5xl font-bold xl:mb-10 mb-5`}>Be a ChangeMaker</h1> */}
                 <h1 className={`${manrope.className} text-5xl font-bold xl:mb-10 mb-5 text-center `}>Be a ChangeMaker</h1>
                 <h1 className={`${manrope.className} text-lg xl:text-2xl font-normal xl:mb-2 xl:w-[800px] text-gray-600 italic text-center`}>Empower change with your generosity! Join us in making a difference</h1>
                 <h1 className={`${manrope.className} text-lg xl:text-2xl font-normal xl:mb-10 xl:w-[800px] text-gray-600 italic text-center`}>Every donation fuels impactful initiatives for a brighter future</h1>
-                <div className='flex flex-col xl:flex-row justify-center items-center xl:space-x-20 my-10'>
-                    <Image
+                <div className='flex flex-col xl:flex-row justify-center items-center xl:space-x-20 my-20 border border-gray-300 p-10 rounded-lg shadow-lg'>
+                    {/* <Image
                         src="/UPI.jpg"
                         alt="UPI QR"
                         width={350}
                         height={350}
                         quality={100}
                         className='h-96 w-96 object-contain'
-                    />
+                    /> */}
                     <div className='flex flex-col'>
 
                         <h1 className={`${manrope.className} font-normal text-xl ml-5 space-y-5`}> <b>Company Name: </b> IVS Education Council  </h1>

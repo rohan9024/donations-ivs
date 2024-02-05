@@ -30,7 +30,7 @@ function Seventh() {
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <p class="block  text-lg antialiased  leading-relaxed text-blue-gray-900 font-bold">
-                                    Mr. Sachin Sharma, <br /> Managing Director
+                                    Mr. Sachin Sharma, <br /> Director
                                 </p>
                                 <Link href="https://www.linkedin.com/in/dsachinsharma/">
                                     <Image
@@ -49,7 +49,7 @@ function Seventh() {
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <p class="block  text-lg antialiased  leading-relaxed text-blue-gray-900 font-bold">
-                                    Ms. Ruchika Sharma, <br /> Managing Director
+                                    Ms. Ruchika Sharma, <br /> Director
                                 </p>
                                 <Link href="https://www.linkedin.com/in/ivssolutions/">
                                     <Image

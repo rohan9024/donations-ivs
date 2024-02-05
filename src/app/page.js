@@ -51,13 +51,14 @@ export default function Home() {
     return (
         <div className='w-screen '>
             <Navbar />
+            <Fifth />
+            <Sixth />
             <First />
+            <Seventh />
+
             <Second />
             <Third />
             <Fourth />
-            <Fifth />
-            <Sixth />
-            <Seventh />
             <Footer />
         </div >
 

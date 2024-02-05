@@ -42,7 +42,6 @@ function page() {
                         className='h-96 w-96 object-contain'
                     /> */}
                     <div className='flex flex-col'>
-
                         <h1 className={`${manrope.className} font-normal text-xl ml-5 space-y-5`}> <b>Company Name: </b> IVS Education Council  </h1>
                         <h1 className={`${manrope.className} font-normal text-xl ml-5 space-y-5`}> <b>Current A/C No:</b> 50200090139710 </h1>
                         <h1 className={`${manrope.className} font-normal text-xl ml-5 space-y-5`}> <b>IFSC CODE:</b> HDFC0000482 </h1>
